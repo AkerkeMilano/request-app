@@ -1,0 +1,26 @@
+@import '../../styles/variables.scss';
+@import '../../styles/functions.scss';
+
+.box {
+    width: toRem(180);
+    height: toRem(54);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $grey-color;
+    &:hover {
+        color: $button-color;
+    }
+}
+
+input[type="radio"] {
+    display: none;
+    &:checked {
+        + .box {
+            background-color: $checked-color;
+            border-radius: toRem(15);
+            color: $button-color;
+            font-weight: 500;
+        }
+    }
+}
