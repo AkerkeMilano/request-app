@@ -1,0 +1,10 @@
+@import '../../styles/variables.scss';
+@import '../../styles/functions.scss';
+
+.btn {
+    background-color: $button-color;
+    border-radius: toRem(15);  
+    width: toRem(360);
+    height: toRem(54);
+    color: $white-color;
+}
