@@ -11,15 +11,27 @@ button {
     cursor: pointer;
 }
 
-// button:active {
-//     border: none;
-//     outline: none;
-// }
+input,
+textarea,
+button {
+  font-family: 'Inter';
+}
 
-// button:focus {
-//     outline: 0;
-// }
+input,
+select,
+textarea {
+  &:active {
+    border: none;
+    outline: none;
+  }
 
+  &:focus {
+    outline: 0;
+  }
+}
 
+input:focus::placeholder {
+    color: transparent;
+  }
 
   
