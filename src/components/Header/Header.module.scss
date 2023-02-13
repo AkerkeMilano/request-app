@@ -1,0 +1,10 @@
+@import '../../styles/variables.scss';
+
+.h1 {
+    font-size: 3rem;
+    color: $black-color;
+    font-weight: 600;
+    &.success {
+        color: $success-color;
+    }
+}

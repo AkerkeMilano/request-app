@@ -21,4 +21,8 @@
     }
 }
 
+.input:invalid[focused-elem="true"] {
+    border-color: $error-color;
+}
+
 

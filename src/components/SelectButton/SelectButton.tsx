@@ -1,14 +1,15 @@
 import { RadioButton } from '../RadioButton/RadioButton';
 import styles from './SelectButton.module.scss';
 
-interface SelectProps {
-
+export type SelectCityProps = {
+  city: string;
+  handleChange: (e: any) => void;
 }
-export const SelectButton: React.FC<SelectProps> = () => {
+export const SelectButton: React.FC<SelectCityProps> = ({city, handleChange}) => {
   return (
     <div className={styles.selectButton}>
-        <RadioButton  value="almaty" title="Алматы"/>
-        <RadioButton  value="astana" title="Астана"/>
+        <RadioButton  value="astana" title="Астана" checked={city === "astana"} handleChange={handleChange}/>
+        <RadioButton  value="almaty" title="Алматы" checked={city === "almaty"} handleChange={handleChange}/>
     </div>
   );
 };
