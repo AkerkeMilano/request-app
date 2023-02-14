@@ -16,3 +16,13 @@
     margin-bottom: toRem(24);
     margin-top: 2rem;
 }
+
+.policy {
+    width: toRem(360);
+    color: $grey-color;
+    font-size: toRem(14);
+    a {
+        color: $button-color;
+        font-size: inherit;
+    }
+}

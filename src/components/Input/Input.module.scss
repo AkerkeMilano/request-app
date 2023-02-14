@@ -1,6 +1,9 @@
 @import '../../styles/variables.scss';
 @import '../../styles/functions.scss';
 
+.wrapper {
+    position: relative;
+}
 .input {
     background-color: $white-color;
     border-radius: toRem(15);  
@@ -21,8 +24,15 @@
     }
 }
 
-.input:invalid[focused-elem="true"] {
-    border-color: $error-color;
+.icon {
+    display: none;
+    position: absolute;
+    color: $error-color;
+    top: 30%;
+    right: 5%;
+    &.error {
+        display: block;
+    }
 }
 
 
