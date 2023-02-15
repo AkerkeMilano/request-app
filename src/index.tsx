@@ -2,15 +2,25 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.scss';
 import App from './App';
+import {Provider} from "react-redux";
+import {configureStore} from "@reduxjs/toolkit";
 import reportWebVitals from './reportWebVitals';
+import formReducer from './store/reducers/formReducer';
+const store = configureStore({reducer: {
+  formRequest: formReducer,
+}});
+
+export type AppDispatch = typeof store.dispatch;
+export type RootState = ReturnType<typeof store.getState>
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
+
 root.render(
-  <React.StrictMode>
+  <Provider store={store}>
     <App />
-  </React.StrictMode>
+  </Provider>
 );
 
 // If you want to start measuring performance in your app, pass a function
