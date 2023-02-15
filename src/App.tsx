@@ -1,11 +1,20 @@
 import React from 'react';
 import { RequestForm } from './containers/RequestForm/RequestForm';
+import { SuccessInfo } from './containers/SuccessInfo/SuccessInfo';
+import { Route, Routes, BrowserRouter } from 'react-router-dom';
+import Layout from './components/Layout/Layout';
 
 function App() {
   return (
-    <div className="App">
-      <RequestForm />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route element={<Layout />}>
+          <Route path="/" element={<RequestForm />}>
+            <Route path="success" element={<SuccessInfo />} />
+          </Route>
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 

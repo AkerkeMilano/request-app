@@ -1,0 +1,25 @@
+@import '../../styles/variables.scss';
+@import '../../styles/functions.scss';
+
+.toolbar {
+    height: toRem(56);
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid $light-grey-color;
+  }
+  
+  .toolbar nav {
+    height: 100%;
+  }
+  
+  .Layout-Content {
+    margin-top: 80px;
+    min-height: calc(100vh - 50px - 80px);
+  }
+  

@@ -1,0 +1,31 @@
+@import '../../styles/variables.scss';
+@import '../../styles/functions.scss';
+
+.not-active {
+  color: $black-color;
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.active {
+  color: $button-color;
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.active .not-active a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.navigationItems {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+  font-size: toRem(20);
+  gap: toRem(32);
+}

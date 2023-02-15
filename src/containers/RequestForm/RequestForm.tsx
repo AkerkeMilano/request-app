@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Button } from '../../components/Button/Button';
 import { Header } from '../../components/Header/Header';
 import { Input } from '../../components/Input/Input';
@@ -58,9 +59,17 @@ export const RequestForm = () => {
     setFormErrors(errors);
     setValidState(true);
   };
+  const navigate = useNavigate();
+  const navigateSuccess = () => {
+    navigate("success");
+  };
+
   const submitForm = (e: any) => {
     e.preventDefault();
     validateInputs(contactInfo);
+    if(Object.keys(formErrors).length === 0){
+      navigateSuccess();
+    }
   };
   return (
     <div className={styles.requestForm}>
