@@ -1,0 +1,8 @@
+@import '../../styles/variables.scss';
+@import '../../styles/functions.scss';
+
+.requestsList {
+    margin-top: toRem(87);
+    margin-left: toRem(56);
+    width: toRem(1218);
+}

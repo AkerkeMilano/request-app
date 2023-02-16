@@ -14,7 +14,7 @@ export interface ContactInfoType {
   tel: string;
   email: string;
   city: string;
-  date: Date;
+  createdDate: Date;
 }
 
 type InputEvent = React.ChangeEvent<HTMLInputElement>;
@@ -24,7 +24,7 @@ const initialValues: ContactInfoType = {
   tel: '',
   email: '',
   city: 'astana',
-  date: new Date()
+  createdDate: new Date()
 };
 
 export interface ErrorsType {

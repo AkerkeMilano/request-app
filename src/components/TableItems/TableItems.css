@@ -1,0 +1,32 @@
+.tableItems {
+  margin-top: 24px;
+}
+
+.ant-table-thead .ant-table-cell {
+  background-color: #ffffff !important;
+  color: #888888 !important;
+  font-size: 18px !important;
+}
+.ant-table-row:nth-child(odd) {
+  background-color: #f7f7f7 !important;
+}
+.ant-table-row {
+  font-size: 18px !important;
+  color: #000000 !important;
+}
+
+.ant-table-column-sorter {
+  display: none;
+}
+
+.buttonArrow {
+    background-color: transparent;
+}
+
+.ant-tooltip {
+    display: none;
+}
+
+td.ant-table-column-sort {
+    background-color: transparent !important;
+  }
