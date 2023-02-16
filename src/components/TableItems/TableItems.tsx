@@ -72,7 +72,7 @@ export const TableItems: React.FC<TableDataProps> = ({ data }) => {
       columns={columns}
       dataSource={data}
       rowKey={(obj) => obj.id}
-      pagination={false}
+      pagination={{ pageSize: 6 }}
     />
   );
 };

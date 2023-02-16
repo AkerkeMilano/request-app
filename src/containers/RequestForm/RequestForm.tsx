@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import {useDispatch} from "react-redux";
+import { useDispatch } from 'react-redux';
+import { useNavigate } from "react-router-dom";
 import { Button } from '../../components/Button/Button';
 import { Header } from '../../components/Header/Header';
 import { Input } from '../../components/Input/Input';
@@ -9,6 +9,7 @@ import { emailValidation, phoneValidation } from '../../functions/functions';
 import styles from './RequestForm.module.scss';
 import { createFormRequest } from '../../store/actions/formActions';
 import { AppDispatch } from '../..';
+
 export interface ContactInfoType {
   name: string;
   tel: string;
@@ -24,7 +25,7 @@ const initialValues: ContactInfoType = {
   tel: '',
   email: '',
   city: 'astana',
-  createdDate: new Date()
+  createdDate: new Date(),
 };
 
 export interface ErrorsType {
@@ -47,45 +48,43 @@ export const RequestForm = () => {
   const [validState, setValidState] = useState(false);
 
   const validateInputs = (values: ContactInfoType) => {
-    let formIsValid = true;
     let k: keyof typeof values;
+    let formIsValid = true;
     const errors: any = {};
     for (k in values) {
       if (!values[k]) {
         errors[k] = 'Пустое поле, введите данные!';
-        formIsValid = false;
+        formIsValid  = false;
       }
     }
     if (!phoneValidation(values)) {
       errors['tel'] = 'Неправильный номер телефона!';
-      formIsValid = false;
+      formIsValid  = false;
     }
     if (!emailValidation(values)) {
       errors['email'] = 'Неправильный адрес почты!';
-      formIsValid = false;
+      formIsValid  = false;
     }
     setFormErrors(errors);
     setValidState(true);
     return formIsValid;
   };
-  const navigate = useNavigate();
-  const navigateSuccess = () => {
-    navigate("/success");
-  };
 
+  const navigate = useNavigate();
   const useAppDispatch: () => AppDispatch = useDispatch;
-const dispatch = useAppDispatch();
+  const dispatch = useAppDispatch();
+  const resetForm = () => {
+    setContactInfo(initialValues);
+    setValidState(false);
+  };
 
   const submitForm = (e: any) => {
     e.preventDefault();
-    if(validateInputs(contactInfo)){
+    if (validateInputs(contactInfo)) {
       dispatch(createFormRequest(contactInfo));
-      navigateSuccess();
+      navigate("/success");
+      resetForm();
     }
-    // validateInputs(contactInfo);
-    // if(Object.keys(formErrors).length === 0){
-      
-    // }
   };
   return (
     <div className={styles.requestForm}>
@@ -126,7 +125,9 @@ const dispatch = useAppDispatch();
       </form>
       <div className={styles.policy}>
         Нажимая на кнопку, вы соглашаетесь с{' '}
-        <a href="https://musan.kz" target="_blank" rel="noreferrer">политикой конфиденциальности</a>
+        <a href="https://musan.kz" target="_blank" rel="noreferrer">
+          политикой конфиденциальности
+        </a>
       </div>
     </div>
   );

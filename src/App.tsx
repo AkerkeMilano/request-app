@@ -11,7 +11,7 @@ function App() {
       <Routes>
         <Route element={<Layout />}>
           <Route path="/" element={<RequestForm />} />
-          <Route path="success" element={<SuccessInfo />} />
+          <Route path="/success" element={<SuccessInfo />} />
           <Route path="/requests" element={<RequestsList />} />
         </Route>
       </Routes>
