@@ -15,7 +15,6 @@ export const RequestsList = () => {
   useEffect(() => {
     dispatch(fetchRequests());
   }, [dispatch]);
-  console.log(requests);
   return (
     <div className={styles.requestsList}>
       <Header type="default">Все заявки</Header>

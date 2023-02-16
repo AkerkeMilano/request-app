@@ -27,7 +27,6 @@ export const createFormRequest = (formData: ContactInfoType) => {
     dispatch(createFormDataRequest());
     try {
       await axiosUrl.post('/requests.json', formData);
-      console.log(formData);
       dispatch(createFormSuccess());
     } catch (e) {
       dispatch(createFormError(e));

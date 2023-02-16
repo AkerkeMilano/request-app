@@ -18,7 +18,7 @@ interface TableDataProps {
 type SortOrderType = 'descend' | 'ascend';
 
 export const TableItems: React.FC<TableDataProps> = ({ data }) => {
-  const [orderDirection, setOrderDirection] = React.useState<SortOrderType>('descend');
+  const [orderDirection, setOrderDirection] = React.useState<SortOrderType>('ascend');
 
   const changeOrder = (direction: SortOrderType) => () => {
     setOrderDirection(direction);
